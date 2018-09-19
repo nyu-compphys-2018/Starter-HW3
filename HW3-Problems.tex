@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{listings,amsmath}
+
+%Listings Settings
+\lstset{frame=tb,
+language=bash,
+aboveskip=3mm,
+belowskip=3mm,
+showstringspaces=false,
+columns=flexible,
+basicstyle={\ttfamily}
+}
+
+%Custom Commands
+\newcommand{\git}{{\texttt{git}}}
+\newcommand{\github}{{\texttt{Github}}}
+\newcommand{\Python}{{\texttt{Python}}}
+\newcommand{\python}{{\texttt{python}}}
+\newcommand{\Anaconda}{{\texttt{Anaconda}}}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\begin{document}
+
+\begin{center}
+
+\vspace*{-2.5cm}
+\LARGE
+\bf{Homework 2}
+\vspace{1cm}
+
+\large{Due: Sept 28, 2018}
+\vspace{1cm}
+
+\end{center}
+
+Write python functions to implement the FTCS (forward in time, centered in space) method for solving a 1D scalar advection equation
+\begin{equation*}
+   \frac{\partial u}{\partial t} + v \frac{\partial u}{\partial x} = 0
+\end{equation*}
+where $u$ is a scalar and $v$ is constant, applied to a Gaussian Wave. We showed in lecture tat the basic approach
+\begin{equation*}
+   u_j^{n+1} = u^n_j - \frac{\Delta t}{2\Delta x}v \left( u^n_{j+1} - u^n_{j-1} \right) 
+\end{equation*}
+is unconditionally \emph{unstable}.  Show the instabilities growing over time in your Gaussian Wave.  Compare this to the corrected, and unconditionally \emph{stable} Lax-Friedrich Method.
+\par
+Write a \LaTeX{} report discussing your results.  It should include a short explanation of the algorithms and implementation with all relevant formula and a discusion of the following:
+\begin{itemize}
+   \item Plots showing growing instabilities in the Gaussian Wave for the FTCS scheme.
+   \item Similar plots for the stable wave from the Lax-Friedrich method.
+\end{itemize}
+Include the \texttt{.pdf} version of te report and all Python files in your homework repo.
+
+\end{document}
