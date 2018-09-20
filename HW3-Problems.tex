@@ -40,7 +40,7 @@ Write python functions to implement the FTCS (forward in time, centered in space
 \end{equation*}
 where $u$ is a scalar and $v$ is constant, applied to a Gaussian Wave. We showed in lecture that the basic approach
 \begin{equation*}
-   u_j^{n+1} = u^n_j - \frac{\Delta t}{2\Delta x}v \left( u^n_{j+1} - u^n_{j-1} \right) 
+   u_j^{n+1} = u^n_j - \frac{v \Delta t}{2\Delta x} \left( u^n_{j+1} - u^n_{j-1} \right) 
 \end{equation*}
 is unconditionally \emph{unstable}.  Show the instabilities growing over time in your Gaussian Wave.  Compare this to the corrected, and unconditionally \emph{stable},Lax-Friedrich Method.
 \par
