@@ -36,20 +36,25 @@ basicstyle={\ttfamily}
 
 Write python functions to implement the FTCS (forward in time, centered in space) method for solving a 1D scalar advection equation
 \begin{equation*}
-   \frac{\partial u}{\partial t} + v \frac{\partial u}{\partial x} = 0
+   \frac{\partial u}{\partial t} = -v \frac{\partial u}{\partial x}
 \end{equation*}
-where $u$ is a scalar and $v$ is constant, applied to a Gaussian Wave. We showed in lecture that the basic approach
+where $u$ is a scalar and $v$ is constant. We showed in lecture that the basic approach
 \begin{equation*}
    u_j^{n+1} = u^n_j - \frac{v \Delta t}{2\Delta x} \left( u^n_{j+1} - u^n_{j-1} \right) 
 \end{equation*}
-is unconditionally \emph{unstable}.  Show the instabilities growing over time in your Gaussian Wave.  Compare this to the corrected, and unconditionally \emph{stable}, Lax-Friedrich Method.
+is unconditionally \emph{unstable}. Test this by running the FTCS scheme on a Gaussian Wave of varying $\sigma$ (e.g. $\sigma \gg \mathrm{d}x$ and $\sigma \sim \mathrm{d}x$ ) and show the instabilities growing over time.  Then, repeat your analysis using the corrected and \emph{stable} Lax-Friedrich Method and compare your results with those from FTCS.  What is the restriction on $\Delta t$ such that the Lax-Friedrich method remains stable?  Show what happens if you violate this condition.
 \par
 Write a \LaTeX{} report discussing your results.  It should include a short explanation of the algorithms and implementation with all relevant formula and a discusion of the following:
 \begin{itemize}
-   \item Plots showing growing instabilities in the Gaussian Wave for the FTCS scheme.
-   \item Similar plots for the stable wave from the Lax-Friedrich method.
-   \item What, if any, are the restrictions on $\Delta t$ in order for Lax-Friedrichs to be stable?
+   \item Plots showing growing instabilities in the Gaussian Wave for the FTCS scheme for a few different $\sigma$.
+   \item The same plots from the Lax-Friedrich method including what happens when the Courant Condition is violated.
 \end{itemize}
 Include the \texttt{.pdf} version of the report and all Python files in your homework repo.
+\par
+\vspace{1cm}
+\textbf{Bonus}: Try both of your advection schemes on a Gaussian Wavepacket.
+
+
+
 
 \end{document}
